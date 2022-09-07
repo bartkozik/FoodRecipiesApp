@@ -1,0 +1,75 @@
+{% extends "__base__.html" %}
+{% block title %}{% endblock title %}
+{% block content %}
+    <div class="dashboard-header m-4">
+        <div class="dashboard-menu">
+            <div class="menu-item border-dashed">
+                <a href="{% url 'dodanie_nowego_przepisu' %}">
+                    <i class="far fa-plus-square icon-plus-square"></i>
+                    <span class="title">dodaj przepis</span>
+                </a>
+            </div>
+            <div class="menu-item border-dashed">
+                <a href="{% url 'dodanie_nowego_planu' %}">
+                    <i class="far fa-plus-square icon-plus-square"></i>
+                    <span class="title">dodaj plan</span>
+                </a>
+            </div>
+            <div class="menu-item border-dashed">
+                <a href="{% url 'dodanie_przepisu_do_planu' %}">
+                    <i class="far fa-plus-square icon-plus-square"></i>
+                    <span class="title">dodaj przepis do planu</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="dashboard-alerts">
+            <div class="alert-item alert-info">
+                <i class="fas icon-circle fa-info-circle"></i>
+                <span class="font-weight-bold">Liczba przepisów: {{ recipe_counter }}</span>
+            </div>
+            <div class="alert-item alert-light">
+                <i class="far icon-calendar fa-calendar-alt"></i>
+                <span class="font-weight-bold">Liczba planów: {{ plan_counter }}</span>
+            </div>
+        </div>
+    </div>
+    <div class="m-4 p-4 border-dashed">
+        <h2 class="dashboard-content-title">
+            <span>Ostatnio dodany plan:</span> {{ plan.name }}
+        </h2>
+        {% for day in days_in_plan %}
+            <table class="table">
+                <thead>
+                <tr class="d-flex">
+                    {% for nrToDayName in day_name %}
+                        {% if nrToDayName.0 == day %}
+                            <th class="col-2">{{ nrToDayName.1 }}</th>
+                        {% endif %}
+                    {% endfor %}
+                    <th class="col-7"></th>
+                    <th class="col-1"></th>
+                    <th class="col-2"></th>
+                </tr>
+                </thead>
+                <tbody class="text-color-lighter">
+                {% for recipe_plan in recipe_plans %}
+                    {% if recipe_plan.day_name.day == day %}
+                        <tr class="d-flex">
+                            <td class="col-2">{{ recipe_plan.meal_name }}</td>
+                            <td class="col-7">{{ recipe_plan.recipe.name }}</td>
+                            <td class="col-1 center">
+                                <a href="#" class="btn btn-danger rounded-0 text-light m-1">Usuń</a>
+                            </td>
+                            <td class="col-2 center">
+                                <a href="/recipe/{{ recipe_plan.recipe.id }}/"
+                                   class="btn btn-info rounded-0 text-light m-1">Szczegóły</a>
+                            </td>
+                        </tr>
+                    {% endif %}
+                {% endfor %}
+                </tbody>
+            </table>
+        {% endfor %}
+    </div>
+{% endblock content %}

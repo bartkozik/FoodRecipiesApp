@@ -1,0 +1,180 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Zaplanuj Jedzonko</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+          crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Charmonman:400,700|Open+Sans:400,600,700&amp;subset=latin-ext"
+          rel="stylesheet">
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+          integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+</head>
+
+<body>
+
+<header class="page-header">
+    <nav class="navbar navbar-expand-lg justify-content-around">
+        <a href="/" class="navbar-brand main-logo">
+            Zaplanuj <span>Jedzonko</span>
+        </a>
+        <ul class="nav nounderline text-uppercase">
+            <!--
+            <li class="nav-item ml-4">
+                <a class="nav-link color-header" href="login.html">logowanie</a>
+            </li>
+            <li class="nav-item ml-4">
+                <a class="nav-link color-header" href="registration.html">rejestracja</a>
+            </li>
+            -->
+            <li class="nav-item ml-4">
+                <a class="nav-link" href="{% url 'app_info' %}">o aplikacji</a>
+            </li>
+            <li class="nav-item ml-4">
+                <a class="nav-link disabled" href="{% url 'przepisy' %}">Przepisy</a>
+            </li>
+            <li class="nav-item ml-4">
+                <a class="nav-link disabled" href="{% url 'kontakt' %}">Kontakt</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+{% include 'carousel.html' %}
+
+<section class="section-more padding-small">
+    {% include 'ostatnio_dodany_plan.html' %}
+</section>
+
+<section class="padding-small details bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col text-center">
+                <i class="fas fa-check icon-details"></i>
+                <h1>Dobra szama</h1>
+                <p>Takiej szamy to ze świecą szukać!
+                </p>
+            </div>
+            <div class="col text-center pr-4 pl-4 mr-4 ml-4">
+                <i class="far fa-clock icon-details"></i>
+                <h1>Zawsze na czas</h1>
+                <p>Pod Twoimi drzwiami jeszcze zanim zwleczesz dupę z łóżka!
+                </p>
+            </div>
+            <div class="col text-center">
+                <i class="fas fa-list icon-details"></i>
+                <h1>Szeroki wybór</h1>
+                <p>Żeby życie miało smaczek - raz fasolka, raz kurczaczek!
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="newsletter-section padding-small">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1>Wyszukaj na stronie</h1>
+            </div>
+            <div class="col-5">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control border-0 rounded-0" placeholder=""
+                           aria-label="Recipient's username" aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                        <button class="input-group-text btn-color border-0 rounded-0" type="submit" id="basic-addon2">
+                            <a href="index.html">Szukaj</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="padding-medium story bg-light" id="about">
+    <div class="container d-flex justify-content-center align-items-center">
+        <div class="row">
+            <div class="col-4 mr-4">
+{#                <div class="div-img">#}
+                </div>
+            </div>
+
+            <div class="col-7 ml-4">
+                <h1 class="pb-1">Najlepsze papu w galaktyce</h1>
+                <p>W naszej aplikacji zaplanujesz swoją dietę i lepiej zorganizujesz swój paśnik. Obliczysz łatwiej
+                    kalorie tylko po to, żeby westchnąć i jeść dalej. Przepisy czasem podpowiada Wyborny Szamisław-
+                    grilokról, mistrz patelni, laureat konkursu "Złota Wara".
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="last-info-section padding-small" id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h3 class="mb-4">Nasze dane kontaktowe:</h3>
+                <p>Wyborny Szamisław<br>
+                    ul. Sucza 6<br>
+                    62-200 Dzierżążnia<br>
+                    KACZYSTAN<br></p>
+            </div>
+            <div class="col pl-4 ml-4">
+                <h3 class="mb-4">Na naszej stronie</h3>
+                <ul class="container">
+                    <li>Ułożysz dietę</li>
+                    <li>Będziesz jeść świadomie</li>
+                    <li>Przechowasz przepisy</li>
+                    <li>Dostaniesz dyspensę na pączki</li>
+                </ul>
+            </div>
+            <div class="col">
+                <h3 class="mb-4">Szukaj na stronie:</h3>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control border-0 rounded-0" placeholder=""
+                           aria-label="Recipient's username" aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                        <button class="input-group-text btn-color border-0 rounded-0" type="submit" id="basic-addon2"><a
+                                href="index.html">Szukaj</a></button>
+                    </div>
+                </div>
+                <div class="container d-flex-row">
+                    <a href="#">
+                        <i class="fab fa-facebook-square mr-4 icon-social"></i>
+                    </a>
+                    <a href="#">
+                        <i class="fab fa-twitter-square mr-4 icon-social"></i>
+
+                    </a>
+                    <a href="#">
+                        <i class="fab fa-instagram icon-social"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<footer class="footer-section pt-3 pb-3">
+    <div class="container text-center">
+        <h5 class="text-light">Copyright <span class="footer-text-color">ZaplanujJedzonko.pl</span></h5>
+    </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+</body>
+</html>

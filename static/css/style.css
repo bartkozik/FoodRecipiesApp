@@ -1,0 +1,459 @@
+/*------------------------------*/
+/*---- Main style ----*/
+/*------------------------------*/
+:root {
+  --link-color: #ff6600;
+  --light-link-color: #fffffa;
+  --background-color: #4b4c4a;
+  --lighter-background-color: #5a615f;
+  --lighter-text-color: #9fa292;
+  --dark-text: #000000;
+  --blue: #007bff;
+  --yellow: #ffc107;
+  --green: #1e7e34;
+  font-size: 16px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+}
+body {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  background: repeat url("/static/images/image.png");
+}
+
+p {
+  font-size: 1.2rem;
+}
+
+.bg-light {
+background: #EAEAEA;
+}
+
+.noPadding {
+  padding: 0;
+}
+.noMargin {
+  margin: 0;
+}
+.center {
+  text-align: center;
+}
+.btn-color {
+  background-color: var(--link-color);
+  color: var(--light-link-color);
+  font-weight: 600;
+  font-size: 20px;
+  padding: 8px 18px;
+}
+.btn-color a {
+  text-decoration: none;
+  color: var(--light-link-color); 
+}
+
+.btn-color:hover {
+  opacity: .8;
+}
+.label-size {
+  font-size: 1.4rem;
+  color: var(--background-color);
+}
+hr {
+  border: 0;
+  margin-bottom: 4px;
+  clear:both;
+  display:block;
+  width: 100%;               
+  background-color:var(--background-color);
+  height: 1px;
+}
+
+.border-dashed{
+  border: .5px dashed  var(--lighter-background-color);
+  background: var(--light-link-color);
+ }
+
+ .borderless td, .borderless th {
+  border: none;
+}
+
+.border-3 {
+  border-width:3px !important;
+  border-bottom-color: #cacaca !important;
+}
+
+.view-height {
+  min-height: 82.9vh;
+}
+
+.text-color-darker {
+  color: var(--background-color);
+}
+
+.text-color-lighter {
+  color: var(--lighter-text-color);
+}
+
+.color-header {
+  color: var(--link-color);
+}
+
+.nav-link.color-header {
+  color: var(--link-color) !important;
+}
+
+.width-medium {
+width: 90% !important;
+margin: 0 auto !important;
+}
+
+/*------------------------------*/
+/*---- Paddings ----*/
+/*------------------------------*/
+
+.padding-large {
+  padding: 150px 0;
+}
+
+.padding-medium {
+  padding: 80px 0;
+}
+
+.padding-small {
+  padding: 40px 0;
+}
+
+/*------------------------------*/
+/*---- Main nav section ----*/
+/*------------------------------*/
+
+.page-header {
+  background: var(--background-color);
+}
+
+.nav-link {
+  color: var(--light-link-color)!important;
+  font-size: 1.1rem;
+}
+
+.page-header .nav .nav-item .active,
+.page-header .nav .nav-item a:hover{
+    color: var(--link-color)!important;
+}
+
+.main-logo {
+  font-family: "Charmonman", cursive;
+  display: inline-block;
+  color: var(--light-link-color)!important;
+  margin-top: 10px;
+  font-size: 2.7rem;
+  font-weight: 600;
+}
+
+.main-logo-smaller {
+  font-size: 2rem;
+}
+
+.main-logo span {
+  color: var(--link-color);
+}
+
+/*------------------------------*/
+/*---- Slider section----*/
+/*------------------------------*/
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  opacity: 1 !important;
+  outline: black;
+  background-image: none;
+}
+
+.carousel-control-next-icon:after
+{
+  content: '>';
+  font-size: 55px;
+  color: var(--dark-text);
+}
+
+.carousel-control-prev-icon:after {
+  content: '<';
+  font-size: 55px;
+  color: var(--dark-text);
+}
+
+.carousel-caption {
+  position: relative !important;
+  left: 0 !important;
+  right: 0 !important;
+  font-weight: 600;
+  color: var(--dark-text) !important;
+}
+
+/*------------------------------*/
+/*---- More section----*/
+/*------------------------------*/
+
+.section-more {
+  background: var(--background-color);
+  color: var(--light-link-color);
+}
+
+/*------------------------------*/
+/*---- Details section----*/
+/*------------------------------*/
+
+.details {
+  color: var(--lighter-background-color);
+}
+
+.icon-details {
+  padding: 2rem 0;
+  font-size: 4rem;
+  color: var(--lighter-text-color);
+}
+
+/*------------------------------*/
+/*---- Newsletter section----*/
+/*------------------------------*/
+
+.newsletter-section .form-control {
+  height: 58px;
+}
+
+.newsletter-section {
+  background: var(--lighter-background-color);
+  color: var(--light-link-color);
+  padding: 20px;
+}
+
+/*------------------------------*/
+/*---- Story section ----*/
+/*------------------------------*/
+
+.div-img {
+  height: 315px;
+  width: 315px;
+  background: var(--lighter-background-color)
+}
+
+/*------------------------------*/
+/*---- Last info ----*/
+/*------------------------------*/
+
+.last-info-section {
+  background: var(--lighter-background-color);
+  color: var(--light-link-color);
+  font-size: 1.2rem;
+}
+
+.last-info-section .form-control {
+  height: 42px;
+}
+
+.last-info-section .btn-color {
+  padding: 0 20px;
+}
+
+.last-info-section li {
+  font-size: 1.2rem;
+  margin: 4px 0;
+}
+
+.icon-social {
+  font-size: 2.6rem;
+  color: var(--light-link-color);
+}
+
+/*------------------------------*/
+/*---- Footer section ----*/
+/*------------------------------*/
+
+.footer-section{
+  background: var(--background-color);
+}
+
+.footer-text-color {
+  color: var(--link-color);
+}
+
+/*------------------------------*/
+/*---- Recipes section ----*/
+/*------------------------------*/
+
+.icon-users {
+  font-size: 3rem;
+  padding: 0 5px 0 20px;
+  color: var(--link-color);
+}
+
+.orange-line {
+  height: .5rem;
+  background: var(--link-color);
+}
+
+.recipes-section {
+  background: var(--light-link-color);
+}
+
+
+/*------------------------------*/
+/*---- Dashboard ----*/
+/*------------------------------*/
+
+.dashboard-nowrap {
+  flex-wrap: nowrap;
+  margin: 0;
+}
+.long-bg {
+  background: var(--lighter-background-color);
+  display: inline-block;
+	vertical-align: top;
+	min-height: 100%;
+}
+.dashboard-section .nav-item {
+  display: block;
+  width: 260px;
+  margin-bottom: 20px;
+}
+.dashboard-section .nav-item i.fa-angle-right {
+  display: none;
+}
+.dashboard-section .nav-item .nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.dashboard-section .nav-item a {
+  font-size: 1.5rem;
+  border-left: 5px solid transparent;
+}
+.dashboard-section .nav-item a.active,
+.dashboard-section .nav-item a:hover {
+  border-left: 5px solid var(--link-color);
+}
+.dashboard-section .nav-item a.active i.fa-angle-right,
+.dashboard-section .nav-item:hover i.fa-angle-right {
+  display: block;
+  color: var(--link-color)!important;
+}
+
+.circle-div {
+  border: 3px solid var(--link-color);
+  border-radius: 50%;
+  height: 39px;
+  width: 45px;
+  padding-top: 1px;
+}
+
+.icon-user {
+  font-size: 2rem;
+  color: var(--link-color);
+}
+.icon-circle {
+  font-size: 2rem;
+}
+.icon-calendar {
+  font-size: 2rem;
+}
+
+
+/*------------------------------*/
+/*---------- DASHBOARD 2---------*/
+/*------------------------------*/
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+}
+.dashboard-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.dashboard-menu .menu-item {
+  width: 100px;
+  height: 160px;
+  text-align: center;
+  padding-top: 15px;
+  margin-right: 20px;
+}
+.dashboard-menu .menu-item a {
+  color: var(--green);
+}
+.dashboard-menu .menu-item:last-child {
+  margin-right: 0;
+} 
+.dashboard-menu .menu-item .title {
+  display: block;
+  padding-top: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.dashboard-alerts {
+  margin-left: 50px;
+  width: 70%;
+}
+.alert-item {
+  padding: 10px;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+}
+.alert-item span {
+  margin-left: 15px;
+}
+.alert-info {
+  background: #fff;
+  border: 1px dashed var(--blue);
+  color: var(--blue);
+}
+.alert-light {
+  background: #fff;
+  border: 1px dashed var(--yellow);
+  color: var(--yellow);
+}
+.icon-plus-square {
+  font-size: 3.5rem;
+}
+
+.dashboard-content {
+  margin-top: 20px;
+}
+.dashboard-content-title {
+  font-size: 1.2rem;
+  text-align: center;
+  font-weight: bold;
+  margin: 20px 0;
+}
+.dashboard-content-title span {
+  color: var(--link-color);
+}
+
+/*------------------------------*/
+/*---- Schedule ----*/
+/*------------------------------*/
+
+.schedules-content {
+  margin-top: 20px;
+}
+.schedules-text {
+  font-size: .9rem;
+  margin-bottom: 0;
+
+}
+.schedules-content .form-group.row {
+  display: flex;
+  align-items: center;
+}
+.schedules-content-header {
+  margin-bottom: 50px;
+}

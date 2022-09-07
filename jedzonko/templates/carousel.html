@@ -1,0 +1,24 @@
+<section class="padding-large bg-light">
+    <div id="carouselExampleControls" class="carousel slide main-slider" data-ride="carousel">
+        <div class="carousel-inner container">
+            {% for x in recipes %}
+                <div class="carousel-item {% if forloop.counter == 1 %} active {% endif %}">
+                    <div class="container w-75 d-flex">
+                        <div class="carousel-caption d-block">
+                            <h1>{{ x.name }}</h1>
+                            <h3> {{ x.description }}</h3>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+</section>

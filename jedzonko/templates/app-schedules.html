@@ -1,0 +1,87 @@
+{% extends "__base__.html" %}
+{% block title %}{% endblock %}
+{% block content %}
+    <div class="dashboard-content border-dashed p-3 m-4 view-height">
+
+        <div class="row border-bottom border-3 p-1 m-1">
+            <div class="col noPadding">
+                <h3 class="color-header text-uppercase">LISTA PLANÓW</h3>
+            </div>
+            <div class="col d-flex justify-content-end mb-2 noPadding">
+                <a href="{% url 'dodanie_przepisu_do_planu' %}"
+                   class="btn btn-success rounded-0 pt-0 pb-0 pr-4 pl-4">Dodaj przepis do planu</a>
+            </div>
+            <div class="col d-flex justify-content-end mb-2 noPadding">
+                <a href="{% url 'dodanie_nowego_planu' %}"
+                   class="btn btn-success rounded-0 pt-0 pb-0 pr-4 pl-4">Dodaj
+                    plan</a>
+            </div>
+        </div>
+
+        <div class="schedules-content">
+            <table class="table border-bottom">
+                <thead>
+                <tr class="d-flex">
+                    <th class="col-1">ID</th>
+                    <th class="col-2">NAZWA</th>
+                    <th class="col-7">OPIS</th>
+                    <th class="col-2 center">AKCJE</th>
+                </tr>
+                </thead>
+                <tbody class="text-color-lighter">
+                {% for plan in plans %}
+                    <tr class="d-flex">
+                        <td class="col-1">{{ plan.id }}</td>
+                        <td class="col-2">{{ plan.name }}</td>
+                        <td class="col-7">
+                            {{ plan.description }}
+                        </td>
+                        <td class="col-2 d-flex align-items-center justify-content-center flex-wrap">
+                            <a href="/remove/plan/{{ plan.id }}"
+                               class="btn btn-danger rounded-0 text-light m-1">Usuń</a>
+                            <a href="/plan/{{ plan.id }}/"
+                               class="btn btn-info rounded-0 text-light m-1">Szczegóły</a>
+                            <a href="/edit/plan/{{ plan.id }}"
+                               class="btn btn-warning rounded-0 text-light m-1">Edytuj</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+            {#        <div class="pagination">#}
+            {#    <span class="step-links">#}
+            {#        <nav aria-label="Page navigation example">#}
+            <div class="page-links">
+                <ul class="pagination justify-content-center">
+                    {% if not plans.has_previous %}
+                        <li class="page-item disabled">
+                            <a class="page-link" href="">previous</a>
+                        </li>
+                    {% endif %}
+                    {% if plans.has_previous %}
+                        <li class="page-item">
+                            <a class="page-link" href="?page={{ plans.previous_page_number }}">previous</a>
+                        </li>
+                    {% endif %}
+                    {#<span class="page-link">#}
+                    {#        2#}
+                    <li class="page-item disabled">
+                        <a class="page-link" style="background: #cacaca" href="">{{ plans.number }}</a>
+
+                    </li>
+
+                    {% if not plans.has_next %}
+                        <li class="page-item disabled">
+                            <a class="page-link" href="">next</a>
+                        </li>
+                    {% endif %}
+                    {% if plans.has_next %}
+                        <li class="page-item">
+                            <a class="page-link" href="?page={{ plans.next_page_number }}">next</a>
+                        </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Testowa strona Django</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            background: #999;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ja żyję!</h1>
+    <p>Jeśli widzisz ten napis, to znaczy, że aplikacja
+        <strong>Django</strong> została skonfigurowana poprawnie
+        i możesz zacząć kodować! ( ͡° ͜ʖ ͡°)
+    </p>
+    <footer>
+        <p>Data wygenerowania strony: {{ actual_date }}</p>
+        <img src="{% static "cl-logo.png" %}" alt="" style="width:300px">
+    </footer>
+</body>
+</html>
