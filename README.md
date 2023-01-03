@@ -1,2 +1,2 @@
-# SCRUMLAB WORKSHOP - Jedzonko Django Web APP - FINAL VER.
+# APP with food recipies. Designed in Django.
 
